@@ -59,5 +59,18 @@ function ReverseAnArray(arr){
   }
   return arr;
 }
-
 console.log(ReverseAnArray(arrInput4));
+
+//solving above question using 
+
+function reverseLoop(arr){
+    let start=0;
+    let end=arr.length-1;
+    while (start<end){
+        //swap
+        swapNumber(arr,start,end);
+        start++;
+        end--;
+    }
+}
+
