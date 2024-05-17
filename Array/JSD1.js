@@ -163,3 +163,32 @@
 //   console.log(data)
 // });
 // // console.log(p1)
+
+// Question4.): Write a function that reverses a given string.
+// let st="Ramayana";
+
+// for(let s of st){
+//   console.log(s);
+// }
+
+// let s=0;
+// let e=st.length-1;
+// while(e>=s){
+//   let temp = 
+// }
+// console.log(st[0]);
+
+
+
+// function Ram(){
+//   setTimeout(()=>{
+//     console.log("Shubham waiting...")
+//   },2000)
+// }
+
+// Ram();
+
+// Q5.) check that a number is prime or not
+
+const num = 3;
+
