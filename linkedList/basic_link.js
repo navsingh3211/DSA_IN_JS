@@ -11,6 +11,34 @@ class LinkedList{
     this.size = 0;
   }
 
+  //insert at index
+  insertAt(data,index){
+
+    //if index is out of range
+    if(index>0 && index>this.size){
+      return;
+    }
+
+    //if first index
+    if(index===0){
+      this.head = new Node(data,this.head)
+    }
+    let node = new Node(data);
+    let current,previous;
+
+    //set current to first
+    let count = 0;
+    current = this.head;
+
+    while(count<index){
+      previous = current; //node before index
+      count++;
+      current = current.next;//node after index
+    }
+    node.next = current;
+    previous.next = node;
+  }
+
   //insert at first node
   insertFirst(data){
     this.head = new Node(data,this.head);
@@ -30,7 +58,7 @@ class LinkedList{
       }
       current.next = node;
     }
-    this.size ++;
+    this.size++;
   }
   printListData(){
     let current = this.head;
@@ -47,5 +75,6 @@ ll.insertFirst(41);
 ll.insertFirst(55);
 ll.insertFirst(91);
 ll.insertLast(111);
+ll.insertAt(222,3);
 ll.printListData();
 // console.log(ll);
