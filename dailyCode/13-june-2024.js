@@ -83,6 +83,52 @@ function sortArrByFrequency(arr){
 console.log(sortArrByFrequency(arr22));
 
 
+// 4.)Finding the Longest Palindrome in an Array
+const inputArr = [1, 232, 5545455, 99999999, 161];
+
+function isPalindrom(num){
+    return '' + num === ('' + num).split('').reverse().join('');
+}
+
+function findlongestPalindrom(arr){
+    let resultingValue = arr[0];
+    for(let ele of arr){
+        if(isPalindrom(ele) && ('' + ele).length > ('' + resultingValue).length){
+            resultingValue=ele;
+        }
+    }
+    return resultingValue;
+}
+
+console.log(findlongestPalindrom(inputArr))
+
+
+// 5.)Counting Distinct Elements in an Array
+const arr5 = [1, 1, 2, 3, 3,3,4,5,5,7];
+
+function countDistinctElement(arr){
+    let count = 0;
+    let tempObj = {};
+    for(let ele of arr){
+        if(tempObj[ele]){
+            tempObj[ele] = tempObj[ele] + 1;
+        }else{
+            tempObj[ele] = 1;
+        }
+    }
+    console.log(tempObj)
+    let tempObjKeys = Object.keys(tempObj);
+    for(let ele of tempObjKeys){
+        if(tempObj[ele] === 1){
+            count++;
+        }
+    }
+    return count;
+}
+
+console.log(countDistinctElement(arr5))
+
+
 
 
 
