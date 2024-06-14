@@ -175,6 +175,27 @@ function findMinimumScalarProduct(arr1,arr2){
 console.log(findMinimumScalarProduct(arr77,arr88));
 
 
+//8.) Sort an array given where number lie between 1 to N(Cyclic sort)
+
+function cyclicSort(arr){
+  let i = 0;
+  while(i < arr.length){
+      const correctIndex = arr[i] - 1;
+      if(arr[i]!==arr[correctIndex]){
+          let temp = arr[i];
+          arr[i] = arr[correctIndex];
+          arr[correctIndex] = temp;
+      }else{
+          i++;
+      }
+  }
+  return arr;
+}
+
+const arrCyc = [3,2,1,5,4];
+console.log(cyclicSort(arrCyc));
+
+
 
 
 
