@@ -100,7 +100,7 @@ function findlongestPalindrom(arr){
     return resultingValue;
 }
 
-console.log(findlongestPalindrom(inputArr))
+console.log(findlongestPalindrom(inputArr));
 
 
 // 5.)Counting Distinct Elements in an Array
@@ -127,6 +127,52 @@ function countDistinctElement(arr){
 }
 
 console.log(countDistinctElement(arr5))
+
+
+// 6.)Removing Duplicate elements from an array : 
+let arr6 = [1, 1, 2, 3, 3,3,4,5,5,7];
+
+function countDistinctElement(arr){
+    let tempObj = {};
+    for(let ele of arr){
+        if(tempObj[ele]){
+            tempObj[ele] = tempObj[ele] + 1;
+        }else{
+            tempObj[ele] = 1;
+        }
+    }
+    let result=[]
+    let tempObjKeys = Object.keys(tempObj);
+    for(let ele of tempObjKeys){
+        if(tempObj[ele] ===1){
+            result.push(+ele);
+        }
+    }
+    return result;
+}
+console.log(countDistinctElement(arr6))
+
+// 7.)Finding Minimum scalar product of two vectors
+let arr77 = [1, 2, 6, 3, 7];
+let arr88 = [10, 7, 45, 3, 7];
+
+function findMinimumScalarProduct(arr1,arr2){
+    let l1 = arr1.length-1;
+    let l2 = arr2.length-1;
+    let i = 0;
+    let j = 0;
+    
+    let minProduct = arr1[0]*arr2[0];
+    while(i<=l1 && j<=l2){
+        if(arr1[i]*arr2[j]<minProduct){
+            minProduct = arr1[i]*arr2[j];
+        }
+        i++;
+        j++;
+    }
+    return minProduct;
+}
+console.log(findMinimumScalarProduct(arr77,arr88));
 
 
 
