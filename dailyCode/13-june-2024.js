@@ -196,6 +196,47 @@ const arrCyc = [3,2,1,5,4];
 console.log(cyclicSort(arrCyc));
 
 
+// 8.)Rotation of elements of array- left and right 
+const arr8 = [1,2,3,4,5,6,7];
+const k = 3;
+// 7,1,2,3,4,5,6
+// 6,7,1,2,3,4,5
+// 5,6,7,1,2,3,4
+
+function rotateArrByK(arr,k){
+    
+    //step-1
+    let s = 0;
+    let e = arr.length-1;
+    reverseArr(s,e,arr);
+    
+    //step-2
+    let s2 = 0;
+    let e2 = k-1;
+    reverseArr(s2,e2,arr);
+    
+    // step-3
+    let s3 = k;
+    let e3 = arr.length-1;
+    reverseArr(s3,e3,arr);
+    
+    return arr;
+}
+
+function reverseArr(start,end,arr){
+    while(end>=start){
+        let temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
+    }
+}
+
+
+console.log(rotateArrByK(arr8,k));
+
+
 
 
 
