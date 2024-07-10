@@ -69,11 +69,15 @@ class LinkList{
     let current = this.head;
 
     //remove from 1st index--> to do
-
-    while(index>1){
-      current = current.next;
-      index--;
+    if(index === 0){
+      this.head = current.next;
+    }else{
+      while(index>1){
+        current = current.next;
+        index--;
+      }
     }
+    
     
     let temp = current;
     temp.next = current.next.next;
@@ -81,6 +85,10 @@ class LinkList{
   }
 
   //clear list
+  clearList(){
+    this.head = null;
+    this.size = 0;
+  }
 
   //print the list data
   printListData(){
@@ -103,5 +111,5 @@ ll.insertAtIndex(2,343443434);
 // console.log(ll.size,'ll.size');
 
 ll.removeAtIndex(4);
-
+ll.clearList()
 ll.printListData()
